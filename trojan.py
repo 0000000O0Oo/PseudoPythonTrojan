@@ -3,20 +3,20 @@ import os
 import code
 
 host = ""
-port = "1965"
+port = 1965
 mot = ""
 
-print(socket.gethostbyname(socket.gethostname()))
 print("Creation du socket en cours...")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Creation du socket terminee !")
+print(socket.gethostbyname(socket.gethostname()))
 s.bind((host, port))
-print("Lancement de l'écoute")
+print("Lancement de l'ecoute")
 s.listen(1)
 client,adresse = s.accept()
 print(adresse)
 print(client.getpeername())
-client.send("Bonjour Karax : ")
+client.send("Envoyer du texte ou une commande >  ")
 mot = client.recv(1024)
 root = "root\n"
 print(mot)
