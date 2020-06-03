@@ -16,7 +16,7 @@ s.listen(1)
 client,adresse = s.accept()
 print(adresse)
 print(client.getpeername())
-client.send("Envoyer du texte ou une commande >  ")
+client.send("Envoyer du texte ou une commande >  ".encode("utf-8"))
 mot = client.recv(1024)
 root = "root\n"
 print(mot)
